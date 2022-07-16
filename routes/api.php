@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// pricate API need auth
+// 'prefix' for API version, ''middleware' => 'auth:api'' means neet auth
+Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
+    // for list online user data
+    Route::get('/user', function( Request $request ){
+        return $request->user();
+    });
 });

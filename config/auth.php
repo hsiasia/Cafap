@@ -95,6 +95,16 @@ return [
         ],
     ],
 
+    /**
+     * API auth set as passport
+     * let user use Session login API, and check app header visit token
+     * 
+     */
+    'api' => [
+        'driver' => 'passport',
+        'provider' => 'users',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout
