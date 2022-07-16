@@ -6,9 +6,16 @@
     },
     "devDependencies": {
         "axios": "^0.25",
-        "laravel-vite-plugin": "^0.4.0",
-        "lodash": "^4.17.19",
+        "bootstrap": "^5.1.3",
+        "@popperjs/core": "^2.11.5",
+        "jquery": "^3.6.0",
         "postcss": "^8.1.14",
+        "sass": "^1.53.0",
+        "lodash": "^4.17.19",
+        "laravel-vite-plugin": "^0.4.0",
         "vite": "^2.9.11"
+    },
+    "dependencies": {
+        "foundation-sites": "^6.7.5"
     }
 }
