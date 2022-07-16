@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\AppController;
+use App\Http\Controllers\Web\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +19,18 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'Web\AppController@getApp')
+Route::get('/', [AppController::class, 'getApp'])
 ->middleware('auth');
+
+// middleware('guest') for guest not for auth user
+Route::get('/login', [AppController::class, 'getLogin'])
+    ->name('login')
+    ->middleware('guest');
+
+// social mean OAuth provider (config/services.php => github)
+// change with app\Http\Middleware\RedirectIfAuthenticated.php
+Route::get( '/auth/{social}',  [AuthenticationController::class, 'getSocialRedirect'])
+      ->middleware('guest');
+
+Route::get( '/auth/{social}/callback',  [AuthenticationController::class, 'getSocialCallback'])
+      ->middleware('guest');

@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('provider'); //OAuth provider
+            $table->string('provider_id'); //user unique id
+            $table->text('avatar'); //user profile pictire
         });
     }
 
