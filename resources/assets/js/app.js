@@ -1,4 +1,6 @@
-window._ = require('lodash');
+// window._ = require('lodash');
+import _ from 'lodash';
+window._ = _;
 
 try {
     window.$ = window.jQuery = require('jquery');
@@ -12,7 +14,9 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+//  window.axios = require('axios');
+import axios from 'axios';
+window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -30,6 +34,6 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-const app = new Vue({
-    el: '#app'
-});
+import Vue from 'vue';
+// vue mount to app element, ready for Vue Router, Vuex
+new Vue().$mount('#app');
