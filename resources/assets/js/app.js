@@ -38,6 +38,7 @@ if (token) {
 // import Vue from 'vue';
 import { createApp } from 'vue/dist/vue.esm-bundler';
 import router from './routes.js'
+import store from './store.js'
 // vue mount to app element, ready for Vue Router, Vuex (vue2)
 // new Vue({
 //     router
@@ -47,4 +48,5 @@ import router from './routes.js'
 const app = createApp({});
 // use() let app use router
 app.use(router);
+app.use(store);
 app.mount('#app');

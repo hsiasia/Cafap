@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^3.0.0",
+        "es6-promise": "^4.2.8",
         "foundation-sites": "^6.7.5",
         "jquery": "^3.6.0",
         "vue": "^3.2.36",
