@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\CafesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // pricate API need auth
-// 'prefix' for API version, ''middleware' => 'auth:api'' means neet auth
+// 'prefix' for API version, ''middleware' => 'auth:api'' means need auth
 Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
     // for list online user data
     Route::get('/user', function( Request $request ){
@@ -35,7 +36,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
      | Method:         GET
      | Description:    Gets all of the cafes in the application
     */
-    Route::get('/cafes', 'API\CafesController@getCafes');
+    Route::get('/cafes', [CafesController::class, 'getCafes']);
 
     /*
      |-------------------------------------------------------------------------------
@@ -46,7 +47,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
      | Method:         GET
      | Description:    Gets an individual cafe
     */
-    Route::get('/cafes/{id}', 'API\CafesController@getCafe');
+    Route::get('/cafes/{id}', [CafesController::class, 'getCafe']);
 
     /*
      |-------------------------------------------------------------------------------
@@ -57,5 +58,5 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:api'], function(){
      | Method:         POST
      | Description:    Adds a new cafe to the application
     */
-    Route::post('/cafes', 'API\CafesController@postNewCafe');
+    Route::post('/cafes', [CafesController::class, 'postNewCafe']);
 });
