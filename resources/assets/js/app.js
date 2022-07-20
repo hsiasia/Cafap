@@ -1,4 +1,5 @@
 // window._ = require('lodash');
+// import '../sass/app.scss';
 import _ from 'lodash';
 window._ = _;
 
@@ -34,6 +35,16 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
-import Vue from 'vue';
-// vue mount to app element, ready for Vue Router, Vuex
-new Vue().$mount('#app');
+// import Vue from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler';
+import router from './routes.js'
+// vue mount to app element, ready for Vue Router, Vuex (vue2)
+// new Vue({
+//     router
+// }).$mount('#app');
+
+// create and mount root component
+const app = createApp({});
+// use() let app use router
+app.use(router);
+app.mount('#app');
