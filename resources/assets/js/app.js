@@ -1,12 +1,11 @@
-// window._ = require('lodash');
-// import '../sass/app.scss';
+import '../sass/app.scss';
+
 import _ from 'lodash';
 window._ = _;
 
 try {
     window.$ = window.jQuery = require('jquery');
-
-    require('foundation-sites');
+    // require('foundation-sites');
 } catch (e) {}
 
 /**
@@ -15,7 +14,6 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-//  window.axios = require('axios');
 import axios from 'axios';
 window.axios = axios;
 
@@ -26,7 +24,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * all outgoing HTTP requests automatically have it attached. This is just
  * a simple convenience so we don't have to attach every token manually.
  */
-
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
@@ -39,9 +36,11 @@ if (token) {
 import { createApp } from 'vue/dist/vue.esm-bundler';
 import router from './routes.js'
 import store from './store.js'
+
 // vue mount to app element, ready for Vue Router, Vuex (vue2)
 // new Vue({
-//     router
+//     router,
+//     store
 // }).$mount('#app');
 
 // create and mount root component

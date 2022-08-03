@@ -16,6 +16,7 @@
         "es6-promise": "^4.2.8",
         "foundation-sites": "^6.7.5",
         "jquery": "^3.6.0",
+        "sass": "^1.54.0",
         "vue": "^3.2.36",
         "vue-loader": "^17.0.0",
         "vue-router": "^4.0.13",

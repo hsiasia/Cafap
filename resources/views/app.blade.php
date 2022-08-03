@@ -5,12 +5,13 @@
         {{-- CSRF token --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        {{-- import extra css file by Laravel Mix --}}
+        {{-- import extra css file by Laravel Mix 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css"/>
+        @vite('resources/assets/sass/app.scss') --}}
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-        <title>Roast</title>
+        <title>Cafap</title>
 
         {{-- CSRF token add to axios header to stop bad request--}}
         <script type='text/javascript'>
@@ -18,15 +19,20 @@
                 'csrfToken' => csrf_token(),
             ]); ?>
         </script>
+        @vite('resources/assets/js/app.js')
+
     </head>
     <body>
-
         <div id="app">
+            {{-- <p>
+                <router-link to="/home">Go to Home</router-link>
+            </p> --}}
             <router-view></router-view>
         </div>
 
-        {{-- import extra js file by Laravel Mix --}} 
+        {{-- import extra js file by Laravel Mix
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+        @vite('resources/assets/js/app.js') --}}
 
     </body>
 </html>
