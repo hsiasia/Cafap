@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('cafes', function( Blueprint $table ){
             $table->increments('id');
             $table->string('name');
-            $table->text('address');
-            $table->string('city');
-            $table->string('state');
-            $table->string('zip');
+            $table->text('city');
+            $table->string('area');
+            $table->string('address');
+            $table->string('postal');
             $table->decimal('latitude', 11, 8);
             $table->decimal('longitude', 11, 8);
             $table->timestamps();
