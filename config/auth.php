@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+            'hash' => true,
+        ],
     ],
 
     /*
@@ -93,6 +98,16 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+    ],
+
+    /**
+     * API auth set as passport
+     * let user use Session login API, and check app header visit token
+     * 
+     */
+    'api' => [
+        'driver' => 'passport',
+        'provider' => 'users',
     ],
 
     /*

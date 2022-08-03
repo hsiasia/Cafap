@@ -58,6 +58,6 @@ class AuthenticationController extends Controller
         Auth::login( $user );
 
         // redirect
-        return redirect('/');
+        return redirect('/home');
     }
 }
