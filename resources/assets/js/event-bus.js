@@ -1,8 +1,6 @@
 /**
- *-------------------------------------------------------------------------------
- * event-bus.js
- *-------------------------------------------------------------------------------
- * use for defferent components to communicate, Vue1 (boardcast, distribution), but now is more recommended event bus  
+ * use for defferent components to communicate, 
+ * ex: Vue1 (by boardcast, distribution), but now is more recommended by event bus  
  */
 import Vue from 'vue';
 export const EventBus = new Vue();
